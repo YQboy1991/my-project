@@ -69,6 +69,7 @@ public class ProxyUtil {
         content=packageContent+importContent+clazzFirstLineContent+filedContent+constructorContent+methodContent+"}";
 
         File file =new File("/Users/lbl/com/google/$Proxy.java");
+        //File file =new File("d:\\com\\google\\$Proxy.java");
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -90,6 +91,7 @@ public class ProxyUtil {
             fileMgr.close();
 
             URL[] urls = new URL[]{new URL("file:////Users/lbl/")};
+            //URL[] urls = new URL[]{new URL("file:D:\\\\")};
             URLClassLoader urlClassLoader = new URLClassLoader(urls);
             Class clazz = urlClassLoader.loadClass("com.google.$Proxy");
 
