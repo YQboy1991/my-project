@@ -19,6 +19,7 @@
         <module>my-project</module>
         <module>reactive</module>
         <module>aliyun-server</module>
+        <module>learn-springboot</module>
     </modules>
 
     <dependencyManagement>
