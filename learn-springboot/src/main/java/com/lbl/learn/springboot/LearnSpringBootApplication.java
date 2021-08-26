@@ -6,16 +6,17 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 @SpringBootApplication
 public class LearnSpringBootApplication {
 
 	public static void main(String[] args) {
 		// 默认
-//		SpringApplication.run(LearnSpringBootApplication.class, args);
+		SpringApplication.run(LearnSpringBootApplication.class, args);
 
 		// 默认等同于
-		ConfigurableApplicationContext run = new SpringApplication(LearnSpringBootApplication.class).run(args);
+//		ConfigurableApplicationContext run = new SpringApplication(LearnSpringBootApplication.class).run(args);
 
 		// 详细配置见org.springframework.boot.SpringApplication.SpringApplication(org.springframework.core.io.ResourceLoader, java.lang.Class<?>...)
 		/*new SpringApplicationBuilder()

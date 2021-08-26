@@ -1,5 +1,7 @@
 package com.lbl.learn.springboot.controller;
 
+import com.demo.starter.config.service.ConfigService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.availability.ApplicationAvailability;
 import org.springframework.boot.availability.LivenessState;
@@ -14,11 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/api/hello")
+@Slf4j
 public class HelloController {
 
     // 通过注入ApplicationAvailability获取应用健康状态
     @Autowired
     private ApplicationAvailability applicationAvailability;
+
+    @Autowired
+    private ConfigService configService;
 
     @GetMapping("/availaby")
     public String getAvailaby(){
@@ -30,5 +36,12 @@ public class HelloController {
     public String getReadiness(){
         ReadinessState readinessState = applicationAvailability.getReadinessState();
         return readinessState.name();
+    }
+
+    @GetMapping("/config")
+    public String getDemoConfig(){
+        String configInfoString = configService.getConfigInfoString();
+        log.info(configInfoString);
+        return configInfoString;
     }
 }
