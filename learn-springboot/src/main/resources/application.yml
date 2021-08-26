@@ -5,7 +5,7 @@ demo:
       - 1
       - 3
       - 4
-    userList:
+    user-list:
       - id:
           5
         name:
@@ -18,7 +18,7 @@ demo:
           "李四"
         age:
           18
-    stringMap:
+    string-map:
       "[/key1]":
         "value1"
       "/key2":
@@ -29,7 +29,7 @@ demo:
         "c"
       "[d.e]":
         "f"
-    userMap:
+    user-map:
       "key1.id":
         12
       "key1.name":
