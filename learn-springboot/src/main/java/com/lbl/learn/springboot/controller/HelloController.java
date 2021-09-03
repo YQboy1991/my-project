@@ -1,6 +1,7 @@
 package com.lbl.learn.springboot.controller;
 
 import com.demo.starter.config.service.ConfigService;
+import com.lbl.learn.springboot.domain.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.availability.ApplicationAvailability;
@@ -8,6 +9,7 @@ import org.springframework.boot.availability.LivenessState;
 import org.springframework.boot.availability.ReadinessState;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -43,5 +45,11 @@ public class HelloController {
         String configInfoString = configService.getConfigInfoString();
         log.info(configInfoString);
         return configInfoString;
+    }
+
+    @GetMapping("/user")
+    @ResponseBody
+    public User getUser(){
+        return User.builder().id(123).name("zhangsan").build();
     }
 }

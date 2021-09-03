@@ -36,6 +36,14 @@ demo:
         "ssss"
       "key1.age":
         14
+    num: 12
 
-#    app-id: demo-starter-sample
+    app-id: demo-starter-sample
 #    env: pro
+#spring:
+#  config:
+#    import: classpath:/config/c1/c1[.yml]
+
+spring:
+  config:
+    import: classpath:/config/c1/c1.yml

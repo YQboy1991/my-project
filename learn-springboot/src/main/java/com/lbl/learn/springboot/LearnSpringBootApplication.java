@@ -1,5 +1,6 @@
 package com.lbl.learn.springboot;
 
+import com.lbl.learn.springboot.listener.*;
 import javafx.scene.Parent;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
@@ -8,12 +9,25 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.lbl.learn.springboot")
 public class LearnSpringBootApplication {
 
 	public static void main(String[] args) {
 		// 默认
-		SpringApplication.run(LearnSpringBootApplication.class, args);
+		SpringApplication springApplication = new SpringApplication(LearnSpringBootApplication.class);
+//		springApplication.addListeners(
+//				new ApplicationContextInitializedEventListener(),
+//				new ApplicationEnvironmentPreparedEventListener(),
+//				new ApplicationFailedEventListener(),
+//				new ApplicationPreparedEventListener(),
+//				new ApplicationReadyEventListener(),
+//				new ApplicationStartedEventListener(),
+//				new ApplicationStartingEventListener(),
+//				new AvailabilityChangeEventListener()
+//		);
+
+		springApplication.run(args);
+//		SpringApplication.run(LearnSpringBootApplication.class, args);
 
 		// 默认等同于
 //		ConfigurableApplicationContext run = new SpringApplication(LearnSpringBootApplication.class).run(args);
