@@ -3,6 +3,8 @@ package com.lbl.learn.springboot.controller;
 import com.demo.starter.config.service.ConfigService;
 import com.lbl.learn.springboot.domain.User;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.availability.ApplicationAvailability;
 import org.springframework.boot.availability.LivenessState;
@@ -20,6 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/hello")
 @Slf4j
 public class HelloController {
+    
+    /** logger for HelloController */
+    private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
     // 通过注入ApplicationAvailability获取应用健康状态
     @Autowired
@@ -30,8 +35,9 @@ public class HelloController {
 
     @GetMapping("/availaby")
     public String getAvailaby(){
-        LivenessState livenessState = applicationAvailability.getLivenessState();
-        return livenessState.name();
+        throw new RuntimeException();
+//        LivenessState livenessState = applicationAvailability.getLivenessState();
+//        return livenessState.name();
     }
 
     @GetMapping("/readiness")

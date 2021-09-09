@@ -6,7 +6,7 @@ import com.lbl.myproject.demo.proxynew.dao.LubanDaoImpl;
 import com.lbl.myproject.demo.proxynew.util.LubanInvocationHandler;
 import com.lbl.myproject.demo.proxynew.util.ProxyUtil;
 import com.lbl.myproject.demo.proxynew.util.TestCustomHandler;
-import sun.misc.ProxyGenerator;
+//import sun.misc.ProxyGenerator;
 
 
 import java.io.FileNotFoundException;
