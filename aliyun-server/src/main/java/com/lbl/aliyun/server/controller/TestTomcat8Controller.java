@@ -45,7 +45,8 @@ public class TestTomcat8Controller {
         Cookie[] cookies = request.getCookies();
         StringBuilder sb = new StringBuilder();
         for (Cookie cookie : cookies) {
-            sb.append(cookie.getName()).append(":").append(cookie.getValue()).append(";");
+            sb.append(cookie.getName()).append(":").append(cookie.getValue()).append(":").append(cookie.getDomain())
+                    .append(";").append("\n");
         }
         return sb.toString();
     }
