@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.availability.ApplicationAvailability;
 import org.springframework.boot.availability.LivenessState;
 import org.springframework.boot.availability.ReadinessState;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author: BaoLei Li
@@ -57,5 +54,12 @@ public class HelloController {
     @ResponseBody
     public User getUser(){
         return User.builder().id(123).name("zhangsan").build();
+    }
+
+    @PostMapping("/user/date")
+    @ResponseBody
+    public User getUserDate(@RequestBody User user){
+        log.info(user.toString());
+        return user;
     }
 }
