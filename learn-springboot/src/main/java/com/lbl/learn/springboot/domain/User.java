@@ -21,7 +21,7 @@ public class User {
 
     private String name;
 
-    @JsonSerialize(using = CustomJsonSerializer.Serializer.class)
-    @JsonDeserialize(using = CustomJsonSerializer.Deserializer.class)
+//    @JsonSerialize(using = CustomJsonSerializer.Serializer.class)
+//    @JsonDeserialize(using = CustomJsonSerializer.Deserializer.class)
     private Date birthDay;
 }

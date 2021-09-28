@@ -18,15 +18,15 @@ import java.util.List;
 @Configuration
 public class MyWebmvcConfiguration implements WebMvcConfigurer {
 
-    @Override
-    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-        converters.add(jsonPHttpMessageConverter());
-    }
+//    @Override
+//    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+//        converters.add(jsonPHttpMessageConverter());
+//    }
 
-    @Bean
-    public JsonPHttpMessageConverter jsonPHttpMessageConverter(){
-        return new JsonPHttpMessageConverter();
-    }
+//    @Bean
+//    public JsonPHttpMessageConverter jsonPHttpMessageConverter(){
+//        return new JsonPHttpMessageConverter();
+//    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

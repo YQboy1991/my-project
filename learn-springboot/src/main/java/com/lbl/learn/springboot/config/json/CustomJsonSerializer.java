@@ -17,7 +17,7 @@ import java.util.Date;
  * @author: BaoLei Li
  * @date: 2021/9/16
  **/
-@JsonComponent
+//@JsonComponent
 public class CustomJsonSerializer {
 
     public static class Serializer extends JsonSerializer<Object> {

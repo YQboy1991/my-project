@@ -2,6 +2,7 @@ package com.lbl.learn.springboot.controller;
 
 import com.demo.starter.config.service.ConfigService;
 import com.lbl.learn.springboot.domain.User;
+import com.lbl.learn.springboot.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,8 @@ import org.springframework.boot.availability.ApplicationAvailability;
 import org.springframework.boot.availability.LivenessState;
 import org.springframework.boot.availability.ReadinessState;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 /**
  * @author: BaoLei Li
@@ -26,6 +29,9 @@ public class HelloController {
     // 通过注入ApplicationAvailability获取应用健康状态
     @Autowired
     private ApplicationAvailability applicationAvailability;
+
+    @Autowired
+    private IUserService userService;
 
     @Autowired
     private ConfigService configService;
@@ -53,7 +59,7 @@ public class HelloController {
     @GetMapping("/user")
     @ResponseBody
     public User getUser(){
-        return User.builder().id(123).name("zhangsan").build();
+        return userService.getUser1();
     }
 
     @PostMapping("/user/date")
