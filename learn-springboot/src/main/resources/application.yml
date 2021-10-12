@@ -2,6 +2,10 @@ spring:
   config:
     import: classpath:/config/c1/c1.yml,classpath:/config/custom.yml
 
+  rsocket:
+    server:
+      port: 7000
+
 logging:
   level:
     web: debug
@@ -15,3 +19,4 @@ server:
 
 http:
   port: 8080
+
