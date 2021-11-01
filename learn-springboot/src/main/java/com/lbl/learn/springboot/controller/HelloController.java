@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.availability.ApplicationAvailability;
 import org.springframework.boot.availability.LivenessState;
 import org.springframework.boot.availability.ReadinessState;
+import org.springframework.messaging.rsocket.RSocketRequester;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
 
 import java.util.Date;
 
@@ -35,6 +37,9 @@ public class HelloController {
 
     @Autowired
     private ConfigService configService;
+
+    @Autowired
+    private RSocketRequester requester;
 
     @GetMapping("/availaby")
     public String getAvailaby(){
@@ -67,5 +72,10 @@ public class HelloController {
     public User getUserDate(@RequestBody User user){
         log.info(user.toString());
         return user;
+    }
+
+    @GetMapping(path = "/rs/ping")
+    public Mono<String> ping() {
+        return this.requester.route("/api/rsocket/hello").data("name").retrieveMono(String.class);
     }
 }

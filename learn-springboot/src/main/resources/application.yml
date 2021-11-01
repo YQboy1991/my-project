@@ -5,6 +5,10 @@ spring:
   rsocket:
     server:
       port: 7000
+#  security:
+#    user:
+#      name: 1
+#      password: 1
 
 logging:
   level:
@@ -20,3 +24,8 @@ server:
 http:
   port: 8080
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

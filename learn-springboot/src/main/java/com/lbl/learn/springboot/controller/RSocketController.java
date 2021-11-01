@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date: 2021/10/12
  **/
 @Controller
-@RequestMapping("/api/rsocket")
 @Slf4j
 public class RSocketController {
 
-    @MessageMapping("/hello")
+    @MessageMapping("/api/rsocket/hello")
     @ResponseBody
     public String getUser(@RequestParam(required = false, defaultValue = "123", value = "key") String key) {
         log.info("===rsocket key is [{}]", key);
